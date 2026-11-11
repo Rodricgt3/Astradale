@@ -1,0 +1,19 @@
+{
+  "source": "AgencyIO - AI Agency Framer Template (11_10_2026 5：57：06 PM).html",
+  "entry": "index.html",
+  "assets": 71,
+  "stylesheets": 11,
+  "resourceBytes": 1992397,
+  "scripts": 0,
+  "runtimeDependencies": 0,
+  "externalFramerReferences": 0,
+  "cssRulesPreserved": true,
+  "allLocalReferencesExist": true,
+  "resourceHashesVerified": true,
+  "visualBrowserValidation": "Blocked: browser policy does not allow local file URLs.",
+  "limitations": [
+    "Saved snapshot contains empty scripts; original Framer interactions and hydration are absent.",
+    "No form endpoint or real contact/social destinations provided.",
+    "Only saved responsive variants can be preserved; original Framer project source is not available."
+  ]
+}
