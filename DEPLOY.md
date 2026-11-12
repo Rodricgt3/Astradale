@@ -1,6 +1,6 @@
 # ASTRADALE: publicación desde GitHub Desktop
 
-Sitio estático: HTML, CSS, imágenes y fuentes locales. Sin React, hidratación, paquetes npm, build ni servicios de Framer. Las clases CSS generadas conservan su nombre para mantener el diseño; no ejecutan Framer.
+Sitio estático: HTML, CSS, imágenes y fuentes locales. Sin React, hidratación, paquetes npm, build ni servicios de Framer. El archivo assets/interactions.js restaura únicamente las FAQ y los controles existentes autorizados. Las clases CSS generadas conservan su nombre para mantener el diseño; no ejecutan Framer.
 
 ## GitHub Desktop
 
@@ -33,8 +33,8 @@ Las rutas de recursos son relativas y admiten la subcarpeta de un repositorio de
 
 - Confirmar correo, teléfono, dominio y perfiles sociales reales. Los enlaces sociales apuntan a Contacto para no enviar visitas a terceros.
 - El formulario carece de destino y la captura ya bloqueaba envíos mediante CSP. No envía mensajes.
-- La captura SingleFile ya tenía los scripts vacíos: no contiene la lógica original de menús, acordeones, carruseles ni animaciones controladas por JavaScript. Esta extracción no la reconstruye. Los enlaces internos y efectos exclusivamente CSS siguen disponibles.
+- La captura SingleFile tenía los scripts vacíos. Se restauraron las cinco FAQ, el botón de volver al inicio y el acceso por teclado al adjunto con JavaScript local. No se reconstruyen los menús, carruseles ni animaciones ausentes del original.
 - No se garantiza la equivalencia visual responsive sin revisar en navegador. Solo se conservan las variantes que existen en el archivo guardado.
-- La comprobación visual automatizada fue bloqueada por la política del navegador para URLs file://. VALIDATION.json recoge las comprobaciones estáticas realizadas.
+- La versión es-MX se comprobó mediante servidor local en Chrome a 1440, 1024 y 390 px. Las cinco FAQ funcionan con clic y teclado. VALIDATION.json recoge los resultados y las limitaciones de la captura.
 - Se sustituyeron cifras, personas, premios, testimonio, precios y direcciones de demostración por contenido descriptivo. Las fotografías y mockups siguen siendo recursos de la plantilla, no evidencia de equipo, clientes o proyectos de ASTRADALE.
 - El logo completo se conserva en los metadatos sociales como recurso local. Navegación y footer usan el wordmark textual astradale.; no se alteraron contenedores para insertar el logo vertical.

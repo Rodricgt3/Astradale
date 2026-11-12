@@ -1,19 +1,56 @@
 {
-  "source": "AgencyIO - AI Agency Framer Template (11_10_2026 5：57：06 PM).html",
-  "entry": "index.html",
-  "assets": 71,
-  "stylesheets": 11,
-  "resourceBytes": 1992397,
-  "scripts": 0,
-  "runtimeDependencies": 0,
-  "externalFramerReferences": 0,
-  "cssRulesPreserved": true,
-  "allLocalReferencesExist": true,
-  "resourceHashesVerified": true,
-  "visualBrowserValidation": "Blocked: browser policy does not allow local file URLs.",
-  "limitations": [
-    "Saved snapshot contains empty scripts; original Framer interactions and hydration are absent.",
-    "No form endpoint or real contact/social destinations provided.",
-    "Only saved responsive variants can be preserved; original Framer project source is not available."
-  ]
+  "idioma": "es-MX",
+  "titulo": "ASTRADALE — Diseño y tecnología",
+  "recursosPreviosVerificados": 82,
+  "cssFuentesImagenesLogosSinCambios": true,
+  "preguntasFAQ": 5,
+  "respuestasFAQ": 5,
+  "pruebasFAQ": {
+    "anchos": [
+      1440,
+      1024,
+      390
+    ],
+    "clic": true,
+    "enter": true,
+    "barraEspaciadora": true,
+    "estadoAriaYVisibilidad": true
+  },
+  "enlacesInternosSinDestinosFaltantes": true,
+  "imagenesRotasEnNavegador": 0,
+  "erroresConsolaObservados": 0,
+  "servidorLocal": "HTTP 200 en 127.0.0.1:4173",
+  "responsive": {
+    "cssYBreakpointsSinCambios": true,
+    "faqRecuperadasEnTresTamanos": true,
+    "desbordamientosNuevosDetectados": 0,
+    "limitacion": "La captura omite variantes de navegación y otras secciones en tablet y móvil. Se conservan esas reglas; no se reconstruyeron variantes ni se garantiza equivalencia con el proyecto Framer original."
+  },
+  "reparaciones": [
+    "Cinco respuestas con marcado original reutilizado y control accesible independiente.",
+    "Recuperados 27 estados de texto invisibles de la captura.",
+    "Retiradas las dos clases de ocultación SSR únicamente de la variante FAQ existente.",
+    "Capa decorativa Pixel de FAQ marcada inert para no interceptar clics.",
+    "Botón volver al inicio y acceso por teclado al adjunto existente."
+  ],
+  "formulario": {
+    "conectado": false,
+    "envioBloqueado": true,
+    "campos": [
+      "Name",
+      "Email",
+      "Message",
+      "Attachment"
+    ],
+    "falta": "URL HTTPS real del receptor, método y formato de envío, y configuración de autenticación del proveedor si aplica. Ajustar CSP únicamente al destino real."
+  },
+  "build": "No aplica: sitio estático sin package.json ni dependencias. JavaScript validado con node --check.",
+  "html": "Documento cargado en Chrome, sin IDs duplicados; cinco controles y regiones FAQ con referencias ARIA válidas. No se ejecutó un validador de conformidad HTML externo.",
+  "excepcionesIdioma": [
+    "Lema oficial Ordinary isn't enough.",
+    "Nombres de tecnologías y términos habituales: SaaS, Shopify, UX/UI, PWA, software y motion graphics.",
+    "No se alteran palabras incrustadas en imágenes ni en el logotipo original."
+  ],
+  "commits": false,
+  "despliegue": false
 }
