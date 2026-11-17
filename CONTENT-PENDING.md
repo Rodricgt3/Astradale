@@ -1,21 +1,19 @@
-# ASTRADALE — estado de integración
+# ASTRADALE — integraciones pendientes
 
-La localización es-MX está aplicada en index.html. Las cinco FAQ tienen respuestas en español y funcionan con clic, Enter y barra espaciadora en escritorio, tablet y móvil. No hay respuestas pendientes de insertar.
+PRIVATE CLIENTS cuenta con una guía estática de diez explicaciones en `/private-clients/servicios/`, con índice, entregables, proceso, límites y CTA de regreso a la solicitud. Los enlaces contextuales abren una pestaña nueva para preservar el estado de la página de origen.
 
-## Conexión del formulario
+## Paquetes y cotizador
 
-Falta proporcionar la URL HTTPS real del receptor (proveedor de formularios o API propia), el método y formato que acepta, y la configuración de autenticación si corresponde. No se debe insertar una clave secreta en JavaScript público.
+La copia actual del repositorio no contiene los paquetes ESSENTIAL, SIGNATURE, PRIVATE DIRECTION, la calculadora BESPOKE ni un resumen de cotización. Por eso la guía no asigna servicios a esos paquetes ni publica una composición. La inclusión y cantidad deben confirmarse por escrito. No se modificaron precios ni se añadieron los importes indicados en el brief, porque no aparecen en las tarjetas o el cotizador de esta versión y no hay una matriz de alcance que permita presentarlos correctamente.
 
-Los campos existentes son Name, Email, Message y Attachment (opcional). Antes de activar el envío hay que mapearlos al proveedor, definir POST y multipart/form-data si acepta adjuntos, permitir el receptor exacto en la CSP y retirar el bloqueo de envío de assets/interactions.js y aria-disabled del botón. No se creó un endpoint, no hay backend y no se simula una respuesta exitosa.
+Cuando esos componentes estén presentes, se podrán añadir enlaces contextuales a sus líneas, opciones y resumen. Actualmente no hay componentes donde insertarlos.
 
-La página muestra Formulario sin conexión y El envío aún no está disponible. El adjunto abre el selector local; seleccionar un archivo no lo transmite.
+## Recepción de solicitudes
 
-## Límites heredados
+El formulario PRIVATE CLIENTS no transmite ni almacena datos. Faltan un receptor HTTPS seguro, método/formato, protección contra spam y un aviso de privacidad real publicado. La casilla de consentimiento permanece deshabilitada. El formulario general de contacto también carece de destino y permanece bloqueado.
 
-La captura no incluye todas las variantes móviles de navegación, servicios y otras secciones. Sus reglas responsive se conservan porque reconstruirlas modificaría la UX/UI. Únicamente se recuperó la variante existente de las FAQ, que ya usa medidas fluidas. Se revisaron 1440, 1024 y 390 px: no se detectaron nuevos desbordamientos de texto frente a la captura. Persisten las medidas y recortes propios del wordmark y titulares originales.
+No se encontró fotografía automotriz propia identificable; la sección usa un espacio rotulado para reemplazar por material ASTRADALE. Las cuatro cuentas externas se muestran solo como inspiración; no se presentan como clientes ni portafolio.
 
-No se reconstruyeron animaciones de Framer ni estados de hover de imágenes. Las imágenes y el logo original no se tradujeron ni modificaron. El archivo HTML histórico de AgencyIO se conserva como fuente, separado de la entrada publicada index.html.
+## Implementación y validación
 
-Siguen pendientes los datos reales de correo, teléfono, dominio y perfiles sociales. Los enlaces de contacto existentes conservan sus destinos y etiquetas en español.
-
-VALIDATION.json contiene el resultado de las comprobaciones.
+La ruta usa `private-clients/servicios/index.html`, compatible con hosting estático de GitHub Pages y sin fallback SPA ni dependencias. Los enlaces de conceptos abren otra pestaña; los CTA regresan a `#private-application` sin añadir datos a la URL. El marcado y los destinos se verifican estáticamente. No se validó el render visual: la política del navegador bloqueó la vista previa local.

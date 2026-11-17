@@ -1,37 +1,97 @@
 {
   "idioma": "es-MX",
   "titulo": "ASTRADALE — Diseño y tecnología",
-  "recursosPreviosVerificados": 82,
-  "cssFuentesImagenesLogosSinCambios": true,
+  "recursosPreviosVerificados": 83,
   "preguntasFAQ": 5,
   "respuestasFAQ": 5,
   "pruebasFAQ": {
-    "anchos": [
-      1440,
-      1024,
-      390
-    ],
+    "preguntas": 5,
     "clic": true,
-    "enter": true,
-    "barraEspaciadora": true,
-    "estadoAriaYVisibilidad": true
+    "tecladoEnter": true,
+    "ariaYVisibilidad": true,
+    "anchosConPruebaFuncional": [
+      320,
+      430,
+      932,
+      1024
+    ],
+    "nota": "Se comprobó cada control con la vista y posición de desplazamiento estabilizadas tras cambiar de tamaño."
   },
   "enlacesInternosSinDestinosFaltantes": true,
   "imagenesRotasEnNavegador": 0,
   "erroresConsolaObservados": 0,
   "servidorLocal": "HTTP 200 en 127.0.0.1:4173",
   "responsive": {
-    "cssYBreakpointsSinCambios": true,
-    "faqRecuperadasEnTresTamanos": true,
-    "desbordamientosNuevosDetectados": 0,
-    "limitacion": "La captura omite variantes de navegación y otras secciones en tablet y móvil. Se conservan esas reglas; no se reconstruyeron variantes ni se garantiza equivalencia con el proyecto Framer original."
+    "capa": "assets/mobile.css",
+    "menu": {
+      "seisEnlaces": true,
+      "abreYCierra": true,
+      "cierraConEscape": true,
+      "devuelveFoco": true,
+      "ctaLlevaAContacto": true
+    },
+    "anchoMaximoDeAdaptacion": 1439.98,
+    "escritorio": {
+      "anchoComparado": 1440,
+      "geometriaCoincideConReferencia": true
+    },
+    "anchosProbados": [
+      320,
+      360,
+      390,
+      412,
+      430,
+      480,
+      600,
+      768,
+      1024,
+      1366,
+      1440
+    ],
+    "desbordamientoHorizontal": false,
+    "contenidoPrincipalOculto": 0,
+    "orientacionesProbadas": [
+      "vertical",
+      "horizontal"
+    ],
+    "controlesProbados": [
+      {
+        "width": 320,
+        "height": 568
+      },
+      {
+        "width": 430,
+        "height": 932
+      },
+      {
+        "width": 932,
+        "height": 430
+      },
+      {
+        "width": 1024,
+        "height": 768
+      }
+    ],
+    "bloquesRecuperados": 29,
+    "objetivosTactilesDeNavegacion": 44,
+    "camposDeTexto": 48,
+    "areaDeMensaje": 144,
+    "fuenteDeCampos": 16,
+    "areasSeguras": true,
+    "zoomPermitido": true,
+    "cabeceraCompactaEnHorizontal": true,
+    "entorno": "Chrome con emulación de viewport y servidor local",
+    "dispositivosFisicosProbados": false,
+    "SafariIOSRealProbado": false,
+    "notas": "Los tamaños cubren pantallas pequeñas y grandes; no se atribuyen medidas específicas ni certificaciones a modelos de teléfono. Se conserva el sobretrazo decorativo original de los textos con gradiente."
   },
   "reparaciones": [
     "Cinco respuestas con marcado original reutilizado y control accesible independiente.",
     "Recuperados 27 estados de texto invisibles de la captura.",
     "Retiradas las dos clases de ocultación SSR únicamente de la variante FAQ existente.",
     "Capa decorativa Pixel de FAQ marcada inert para no interceptar clics.",
-    "Botón volver al inicio y acceso por teclado al adjunto existente."
+    "Botón volver al inicio y acceso por teclado al adjunto existente.",
+    "Capa responsive nativa, menú móvil, rejillas fluidas, controles táctiles, formulario legible y recuperación de 29 bloques estáticos."
   ],
   "formulario": {
     "conectado": false,
@@ -44,7 +104,7 @@
     ],
     "falta": "URL HTTPS real del receptor, método y formato de envío, y configuración de autenticación del proveedor si aplica. Ajustar CSP únicamente al destino real."
   },
-  "build": "No aplica: sitio estático sin package.json ni dependencias. JavaScript validado con node --check.",
+  "build": "HTML estático sin build ni dependencias nuevas. node --check en interactions.js y mobile.js; git diff --check; pruebas funcionales y visuales en Chrome.",
   "html": "Documento cargado en Chrome, sin IDs duplicados; cinco controles y regiones FAQ con referencias ARIA válidas. No se ejecutó un validador de conformidad HTML externo.",
   "excepcionesIdioma": [
     "Lema oficial Ordinary isn't enough.",
@@ -52,5 +112,68 @@
     "No se alteran palabras incrustadas en imágenes ni en el logotipo original."
   ],
   "commits": false,
-  "despliegue": false
+  "despliegue": false,
+  "imagenesFuentesYLogosOriginalesSinCambios": true,
+  "navegacionOriginalYContenidoConservados": true,
+  "optimizacionCarga": {
+    "dependenciasNuevas": 0,
+    "fuentesLocales": true,
+    "fontDisplay": "swap",
+    "preCargaFuentePrincipal": true,
+    "imagenesFueraDeHeroConCargaDiferida": true,
+    "decodificacionImagenes": "async",
+    "capasWillChangeInnecesariasRetiradasEnMovil": true,
+    "respetaMovimientoReducido": true,
+    "bytesCSS": 17317,
+    "bytesJSMenu": 1412
+  },
+  "privateClients": {
+    "integrado": true,
+    "ancla": "#private-clients",
+    "accesoEnNavegacion": true,
+    "capacidades": 3,
+    "etapas": 4,
+    "camposRequeridos": [
+      "Nombre completo",
+      "Correo electrónico",
+      "Instagram o perfil principal",
+      "Ciudad y estado",
+      "Vehículo o vehículos",
+      "Tipo de contenido",
+      "Objetivo de marca personal"
+    ],
+    "presupuestoReferenciasDisponibilidadOpcionales": true,
+    "validacionLocal": true,
+    "envioConectado": false,
+    "datosEnviados": false,
+    "datosAlmacenados": false,
+    "pendiente": [
+      "Receptor HTTPS seguro con método/formato definidos y protección contra spam",
+      "Aviso de privacidad real publicado antes de habilitar el consentimiento"
+    ],
+    "imagenAutomotriz": "Se muestra placeholder rotulado; no se identificó fotografía automotriz propia disponible",
+    "dependenciasNuevas": 0,
+    "pruebaVisualDeEstaIntegracion": "No realizada: el navegador bloqueó la vista previa local por política; no se afirma validación visual."
+  },
+  "privateServices": {
+    "ruta": "private-clients/servicios/index.html",
+    "serviciosExplicados": 10,
+    "anclasInternas": 10,
+    "enlacesContextuales": 10,
+    "targetsNuevaPestana": true,
+    "ctaRegresoA": "#private-application",
+    "sinDatosPersonalesEnUrl": true,
+    "referenciasExternasAclaradas": true,
+    "paquetesEnRepositorio": [],
+    "cotizadorBespokePresente": false,
+    "resumenCotizacionPresente": false,
+    "preciosDelBriefPublicados": false,
+    "motivoPreciosNoPublicados": "La versión actual no contiene esas tarjetas ni matriz de alcance; no se alteraron ni se asignó servicio a un precio.",
+    "pruebaVisual": false,
+    "nota": "Validación estática. La política del navegador bloqueó la vista previa local; no se afirma validación visual.",
+    "accesoDesdeServiciosGenerales": true,
+    "enlaceGeneralServicios": true,
+    "botoneraPaquetesPresente": false,
+    "calculadoraBespokePresente": false
+  }
 }
