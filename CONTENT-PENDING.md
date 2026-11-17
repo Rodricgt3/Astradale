@@ -1,6 +1,6 @@
 # ASTRADALE — integraciones pendientes
 
-PRIVATE CLIENTS cuenta con una guía estática de diez explicaciones en `/private-clients/servicios/`, con índice, entregables, proceso, límites y CTA de regreso a la solicitud. Los enlaces contextuales abren una pestaña nueva para preservar el estado de la página de origen.
+En el inicio, PRIVATE CLIENTS aparece solo como una descripción breve con enlace. La experiencia completa está en `/private-clients/`: presentación, capacidades, proceso y formulario. La navbar principal abre esa ruta. La guía con diez explicaciones detalladas está en `/private-clients/servicios/`; sus enlaces abren otra pestaña para conservar el estado de la página de origen.
 
 ## Paquetes y cotizador
 
@@ -12,8 +12,8 @@ Cuando esos componentes estén presentes, se podrán añadir enlaces contextuale
 
 El formulario PRIVATE CLIENTS no transmite ni almacena datos. Faltan un receptor HTTPS seguro, método/formato, protección contra spam y un aviso de privacidad real publicado. La casilla de consentimiento permanece deshabilitada. El formulario general de contacto también carece de destino y permanece bloqueado.
 
-No se encontró fotografía automotriz propia identificable; la sección usa un espacio rotulado para reemplazar por material ASTRADALE. Las cuatro cuentas externas se muestran solo como inspiración; no se presentan como clientes ni portafolio.
+No se encontró fotografía automotriz propia identificable; la página usa un espacio rotulado para reemplazar por material ASTRADALE. Las cuatro cuentas externas en la guía son referencias de inspiración, no clientes ni portafolio.
 
 ## Implementación y validación
 
-La ruta usa `private-clients/servicios/index.html`, compatible con hosting estático de GitHub Pages y sin fallback SPA ni dependencias. Los enlaces de conceptos abren otra pestaña; los CTA regresan a `#private-application` sin añadir datos a la URL. El marcado y los destinos se verifican estáticamente. No se validó el render visual: la política del navegador bloqueó la vista previa local.
+Ambas rutas usan HTML estático y funcionan con el hosting de GitHub Pages mediante archivos `index.html`; no necesitan fallback SPA ni dependencias. Los enlaces explicativos abren otra pestaña; los CTA regresan a la solicitud en `/private-clients/#private-application`, sin datos en la URL. El marcado y los destinos se verifican estáticamente. No se validó el render visual: la política del navegador bloqueó la vista previa local.

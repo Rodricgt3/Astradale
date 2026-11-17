@@ -153,7 +153,13 @@
     ],
     "imagenAutomotriz": "Se muestra placeholder rotulado; no se identificó fotografía automotriz propia disponible",
     "dependenciasNuevas": 0,
-    "pruebaVisualDeEstaIntegracion": "No realizada: el navegador bloqueó la vista previa local por política; no se afirma validación visual."
+    "pruebaVisualDeEstaIntegracion": "No realizada: el navegador bloqueó la vista previa local por política; no se afirma validación visual.",
+    "paginaCompleta": "private-clients/index.html",
+    "navbarDestino": "private-clients/",
+    "enIndex": "Solo explicación breve y enlace",
+    "formularioEnPaginaPrivada": true,
+    "sinSeccionCompletaEnIndex": true,
+    "cssYJSPrivadosNoCarganEnIndex": true
   },
   "privateServices": {
     "ruta": "private-clients/servicios/index.html",

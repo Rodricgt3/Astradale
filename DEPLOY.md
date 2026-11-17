@@ -1,6 +1,6 @@
 # ASTRADALE: publicación desde GitHub Desktop
 
-Sitio estático: HTML, CSS, imágenes y fuentes locales. Sin React, hidratación, paquetes npm, build ni servicios de Framer. Los archivos assets/interactions.js y assets/mobile.js controlan las FAQ, los controles existentes y el menú móvil. assets/mobile.css adapta los componentes originales a pantallas pequeñas. assets/private-clients.css y assets/private-clients.js contienen únicamente PRIVATE CLIENTS y su validación local. La guía estática se sirve desde private-clients/servicios/index.html; no requiere rutas SPA ni build. Las clases CSS generadas conservan su nombre para mantener el diseño; no ejecutan Framer.
+Sitio estático: HTML, CSS, imágenes y fuentes locales. Sin React, hidratación, paquetes npm, build ni servicios de Framer. Los archivos assets/interactions.js y assets/mobile.js controlan las FAQ, los controles existentes y el menú móvil. assets/mobile.css adapta los componentes originales a pantallas pequeñas. assets/private-clients.css y assets/private-clients.js contienen únicamente PRIVATE CLIENTS y su validación local. PRIVATE CLIENTS vive en private-clients/index.html y su guía de servicios en private-clients/servicios/index.html; ambas rutas estáticas funcionan sin fallback SPA ni build. Las clases CSS generadas conservan su nombre para mantener el diseño; no ejecutan Framer.
 
 ## GitHub Desktop
 
