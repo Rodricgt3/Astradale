@@ -35,3 +35,12 @@ body.private-services-page { --ps-lime:#39f24a; }
   #main #project .framer-1lympli { height:auto; min-height:420px; }
   .private-page-header nav a { font-size:12px; }
 }
+#services .framer-r8grb3 p { white-space: nowrap; }
+#services .framer-FnkkT .framer-13914nx { transition: opacity .35s ease, transform .5s ease; pointer-events:none; }
+@media (hover:hover) and (pointer:fine) {
+  #services .framer-FnkkT:hover .framer-13914nx { opacity:1 !important; transform:scale(1) !important; }
+  #main #services .framer-FnkkT:hover .framer-1059q8f p { background:rgba(3,7,18,.85); color:white !important; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #services .framer-FnkkT .framer-13914nx { transition:none; }
+}
