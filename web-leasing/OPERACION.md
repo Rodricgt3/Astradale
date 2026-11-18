@@ -1,0 +1,12 @@
+# Operación y medición de Fomo Cloud
+
+La web estática publica asignaciones comerciales. No hay configuración Firebase ni receptor autorizado identificado en el repositorio. No se activan servicios, pagos ni cuentas de facturación. La solicitud se descarga como borrador y el usuario puede compartirla por el contacto existente. En sesión solo se guardan identificadores de plan y módulos.
+
+## Diseño para el backend
+
+- Aislar cada cliente en su propio proyecto de hosting si las métricas agregadas son la fuente de atribución. Compartir proyecto solo cuando exista instrumentación verificable por sitio, incluida la transferencia servida por caché. Medir ocupación del sitio con el manifiesto de despliegue y medición de bytes transferidos con la fuente de atribución validada. Definir por contrato unidades, ventana mensual, retraso y reinicio.
+- Guardar por proyecto y recurso la asignación versionada, periodo, lectura, marca de tiempo, fuente y calidad del dato. Una lectura faltante queda como desconocida. Una tarea de servidor consolida e identifica cruces del 80 % y 100 %. Deduplicar por proyecto, recurso, periodo y umbral.
+- Registrar ampliaciones con capacidad, importe, vigencia, versión de propuesta y aceptación autenticada con fecha. Aplicar solo a partir de la vigencia posterior a la aceptación. Conservar auditoría. El consumo anterior no genera extras retroactivos.
+- Antes de desplegar, rechazar compilaciones que excedan el almacenamiento pactado. Para datos, archivos y backend, medir y aplicar cuotas y límites de tasa en un punto de entrada que cubra todas las operaciones. Definir acciones de contención por proyecto antes del alta, incluyendo detener operaciones no esenciales cuando sea viable.
+- Las alertas de presupuesto son señales y no equivalen a un límite de facturación. El tráfico de hosting puede continuar durante el retraso de medición o antes de que surta efecto una medida de contención. Separar proyectos limita el alcance operativo, pero no evita ese consumo del proveedor. Hasta validar medición y controles, mantener apagados los cargos adicionales por uso.
+- Al activar recepción, validar en servidor, limitar abuso, recalcular con la versión de tarifas del servidor y guardar tipo, cliente, contacto, sitio, plan, módulos, importes, pendientes, fecha y estado. Confirmar recepción solo tras persistir una solicitud con folio. Restringir acceso a datos personales.

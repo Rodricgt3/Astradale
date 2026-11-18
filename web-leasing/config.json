@@ -1,0 +1,127 @@
+{
+  "plans": {
+    "start": {
+      "name": "Web Start",
+      "monthly": 199,
+      "files": "250 MB",
+      "traffic": "2 GB",
+      "source": "Piquín",
+      "included": [],
+      "hostingMonthly": null
+    },
+    "presence": {
+      "name": "Web Presence",
+      "monthly": 399,
+      "files": "500 MB",
+      "traffic": "5 GB",
+      "source": "Jalapeño",
+      "included": [],
+      "hostingMonthly": null
+    },
+    "business": {
+      "name": "Web Business",
+      "monthly": 999,
+      "files": "1 GB",
+      "traffic": "10 GB",
+      "source": "Reaper",
+      "included": [
+        "vitrina",
+        "carrito"
+      ],
+      "hostingMonthly": null
+    }
+  },
+  "modules": {
+    "pagina": {
+      "name": "Página adicional",
+      "price": 1350,
+      "description": "Amplía el sitio con una sección independiente.",
+      "requirements": "Acceso al proyecto y contenido listo.",
+      "extras": "Diseño especial o redacción se cotizan aparte."
+    },
+    "radar": {
+      "name": "Radar de tráfico",
+      "price": 350,
+      "description": "Instala medición de visitas y eventos acordados.",
+      "requirements": "Cuenta de analítica y configuración de consentimiento aplicable.",
+      "extras": "Herramientas, licencias y análisis continuo se cotizan aparte."
+    },
+    "bilingue": {
+      "name": "Sitio bilingüe",
+      "price": 950,
+      "description": "Agrega navegación y páginas en español e inglés.",
+      "requirements": "Traducciones revisadas y estructura compatible.",
+      "extras": "Traducción profesional y contenidos adicionales se cotizan aparte."
+    },
+    "datos": {
+      "name": "Captura de datos",
+      "price": 450,
+      "description": "Conecta formularios a un destino autorizado.",
+      "requirements": "Destino, permisos y validación del flujo.",
+      "extras": "Almacenamiento, automatización y protección adicional se evalúan por separado."
+    },
+    "vitrina": {
+      "name": "Vitrina digital",
+      "price": 850,
+      "description": "Presenta productos o servicios en un catálogo.",
+      "requirements": "Fichas, precios e imágenes proporcionados por el cliente.",
+      "extras": "Inventario dinámico e integraciones se cotizan aparte."
+    },
+    "carrito": {
+      "name": "Carrito WhatsApp",
+      "price": 750,
+      "description": "Agrupa productos y prepara un pedido para enviar por WhatsApp.",
+      "requirements": "Catálogo compatible y número comercial.",
+      "extras": "Pagos, inventario y automatización no están incluidos."
+    },
+    "motor": {
+      "name": "Motor de reservas",
+      "price": 650,
+      "description": "Integra la selección de horarios y solicitudes de cita.",
+      "requirements": "Calendario compatible y acceso autorizado.",
+      "extras": "Suscripción del calendario, mensajes y sincronización avanzada se evalúan."
+    },
+    "restaurante": {
+      "name": "Reservas para restaurante",
+      "price": 750,
+      "description": "Integra reservas de mesas con un proveedor compatible.",
+      "requirements": "Cuenta del restaurante y acceso a la integración.",
+      "extras": "Licencias, comisiones y costos del proveedor van por separado."
+    },
+    "pagos": {
+      "name": "Pasarela de pagos",
+      "price": 1450,
+      "description": "Integra una pasarela para recibir pagos en el sitio.",
+      "requirements": "Cuenta comercial aprobada y compatibilidad técnica.",
+      "extras": "Comisiones, licencias y requisitos del proveedor van por separado."
+    },
+    "app": {
+      "name": "Fomo App (PWA)",
+      "price": 1200,
+      "description": "Prepara una web instalable en navegadores compatibles.",
+      "requirements": "Sitio HTTPS y configuración técnica compatible.",
+      "extras": "Publicación en tiendas y funciones fuera de línea avanzadas se evalúan."
+    },
+    "publisher": {
+      "name": "Fomo Publisher",
+      "price": 2450,
+      "description": "Publica y edita entradas desde un panel.",
+      "requirements": "Inicio de sesión y almacenamiento de contenidos.",
+      "extras": "Cloud para autenticación, base de datos y archivos según el alcance."
+    },
+    "monitor": {
+      "name": "Fomo Monitor",
+      "price": 3890,
+      "description": "Centraliza registros y solicitudes en un panel.",
+      "requirements": "Permisos, modelo de datos y control de acceso.",
+      "extras": "Cloud para autenticación, base de datos y funciones según el alcance."
+    },
+    "inventory": {
+      "name": "Fomo Inventory",
+      "price": 3980,
+      "description": "Gestiona fichas e imágenes de inventario.",
+      "requirements": "Modelo de inventario y acceso de administración.",
+      "extras": "Cloud para base de datos, archivos y autenticación según el alcance."
+    }
+  }
+}

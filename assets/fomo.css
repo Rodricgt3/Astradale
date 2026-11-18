@@ -14,3 +14,24 @@ body.private-services-page { --ps-lime:#39f24a; }
   #private-clients .private-shell { width:auto; margin-inline:max(20px,env(safe-area-inset-left)) max(20px,env(safe-area-inset-right)); }
   .fomo-prices { overflow-wrap:anywhere; }
 }
+/* Restore the final frame of the static template on wide screens as well. */
+#main :is(.framer-12mceac,.framer-86yd4l,.framer-COjv3,[data-framer-name="Why choose us card"],[data-framer-name="Pricing card wrapper"],[data-framer-name="Pricing card"]) {
+  opacity:1 !important;
+  transform:none !important;
+}
+#main #services .framer-1059q8f p { color:#55595c; }
+#main #services .framer-FnkkT:hover .framer-1059q8f p { background:#fff; color:#303438 !important; }
+.fomo-standalone, .private-services-page { min-height:100vh; }
+.fomo-prices, .fomo-prices *, .fomo-bar { box-sizing:border-box; }
+@media(max-width:700px) {
+  .fomo-bar { align-items:center; gap:8px 16px; }
+  .leasing .fomo-bar nav { width:100%; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; }
+  .leasing nav a { font-size:15px; line-height:1.3; }
+  .fomo-prices h1,.fomo-prices h2 { overflow-wrap:break-word; }
+  .fomo-grid { gap:12px; margin-block:24px; }
+  .fomo-grid article { min-width:0; padding:20px; }
+  .leasing-panel select,.leasing-panel input,.leasing-panel textarea { width:100%; font-size:16px; }
+  #main #hero .framer-1hwpv3s h1 { font-size:clamp(30px,9vw,62px); white-space:normal; }
+  #main #project .framer-1lympli { height:auto; min-height:420px; }
+  .private-page-header nav a { font-size:12px; }
+}
