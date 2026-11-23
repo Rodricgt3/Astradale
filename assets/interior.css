@@ -1,0 +1,80 @@
+:root {
+  color-scheme: dark;
+  --lime: #bbff00;
+  --ground: #08090b;
+  --surface: #17181b;
+  --edge: #313337;
+  --fomo-green: var(--lime);
+  scroll-padding-top: 5rem;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body, body.fomo-standalone, body.private-services-page {
+  margin: 0; background: var(--ground); color: #eeefeb;
+  font: 1rem/1.5 Inter, Arial, sans-serif;
+  --ps-ink: var(--ground); --ps-panel: var(--surface); --ps-lime: var(--lime);
+}
+.inner-dock {
+  position: sticky; top: .65rem; z-index: 15; margin: .65rem auto 0;
+  display: flex; align-items: center; gap: 1rem; width: max-content; max-width: 96%;
+  border: 1px solid #35363b; background: #16171af7; border-radius: .8rem;
+  padding: .3rem .35rem .3rem 1rem;
+  font: 600 .74rem/1.4 ui-monospace, monospace;
+}
+.inner-dock a { text-decoration: none; color: #eeefeb; }
+.inner-location { color: var(--lime); font-weight: 400; }
+.inner-dock summary {
+  display: grid; place-items: center; width: 44px; height: 44px;
+  list-style: none; cursor: pointer; background: #26282a; border-radius: .5rem;
+}
+.inner-dock summary::-webkit-details-marker { display: none; }
+.inner-dock nav {
+  position: absolute; right: 0; top: calc(100% + .45rem);
+  display: grid; padding: .55rem; width: min(18rem, 88vw);
+  max-height: 70svh; overflow-y: auto; border: 1px solid var(--edge);
+  background: #191a1d; border-radius: .75rem; box-shadow: 0 1rem 3rem #0008;
+}
+.inner-dock nav a { display: flex; align-items: center; min-height: 44px; padding: .45rem .75rem; border-radius: .4rem; }
+.inner-dock nav a:is(:hover,:focus-visible,[aria-current]) { color: var(--lime); background: #252725; }
+body :focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+.fomo-prices, #private-clients { background: var(--ground); --private-ink: var(--ground); --private-lime: var(--lime); }
+.fomo-prices h1, .ps-hero h1, #private-clients .private-hero h2 {
+  font-size: clamp(2.8rem, 7.3vw, 7.6rem); line-height: .98;
+  font-weight: 490; letter-spacing: -.065em; text-wrap: balance;
+}
+.fomo-standalone main h1::before, .ps-hero::before {
+  content: ''; display: block; margin-bottom: clamp(1.6rem,4vw,3rem);
+  width: 3.5rem; height: 3px; background: var(--lime);
+}
+.fomo-grid article, .leasing-panel, #private-clients .private-card, .ps-details section {
+  background: var(--surface); border: 1px solid var(--edge); border-radius: .85rem;
+}
+.fomo-grid article { min-width: 0; }
+.fomo-grid h3 { letter-spacing: -.045em; line-height: 1.12; }
+.fomo-prices .fomo-cta, #private-clients .private-button {
+  display: inline-flex; align-items: center; min-height: 44px; padding: .65rem 1.15rem;
+  border-radius: 2rem; color: #141610; background: var(--lime); text-decoration: none;
+}
+.fomo-grid article a, .ps-index a:hover { color: var(--lime); }
+.leasing button, .leasing :is(select,textarea,input:not([type=checkbox])), #private-clients .private-field :is(textarea,input:not([type=checkbox])) {
+  background: #121316; color: #f4f4f2; border: 1px solid #5d6065; border-radius: .55rem; font-size: 1rem;
+}
+.leasing button[aria-pressed=true] { background: #283019; border-color: var(--lime); }
+#private-clients .private-hero {
+  position: relative; isolation: isolate; padding: clamp(1.4rem,4vw,4rem);
+  border: 1px solid var(--edge); border-radius: 1rem; overflow: hidden;
+  background: linear-gradient(90deg,#090a0bf5 0%,#090a0bf0 40%,#090a0b69 100%), url(motor.webp) center right / cover;
+}
+.private-page-footer { background: var(--ground); color: #eeefeb; }
+.private-page-footer a { color: var(--lime); }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .fomo-grid article, .private-card, .ps-index a { transition: transform .25s, border-color .25s; }
+  .fomo-grid article:hover, .private-card:hover { transform: translateY(-4px); border-color: #637148; }
+  .ps-index a:hover { transform: translateX(4px); }
+}
+@media(max-width:720px) {
+  .inner-dock { gap: .7rem; }
+  .fomo-grid { grid-template-columns: minmax(0,1fr); }
+  #private-clients .private-hero { background-position: 53% center; }
+  .ps-service { scroll-margin-top: 4.5rem; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
