@@ -49,3 +49,42 @@
   :is(.private-form,.leasing-form) :is(input,textarea,select) { transition:border-color .2s,box-shadow .2s; }
   :is(.private-form,.leasing-form) :is(input,textarea,select):focus-visible { border-color:#bbff00; box-shadow:0 0 0 3px #bbff0022; }
 }
+/* The camera and the scroll offset use separate layers to keep the typography still. */
+.garage { overflow:hidden; background-image:none; }
+.garage::before {
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background-image:url(motor.webp); background-repeat:no-repeat;
+  background-size:inherit; background-position:inherit;
+}
+.site-nav summary span { transition:rotate .3s ease; }
+.site-nav details[open] summary span { rotate:90deg; }
+@media (prefers-reduced-motion:no-preference) {
+  .garage::before { animation:garage-camera 9s ease-in-out infinite alternate; transform-origin:50% 75%; }
+  @keyframes garage-camera {
+    from { transform:scale(1) translateX(0); }
+    to { transform:scale(1.075) translateX(-.45%); }
+  }
+  .garage::after {
+    content:""; position:absolute; inset:40% 0 6%; pointer-events:none; z-index:-1;
+    background:linear-gradient(107deg,transparent 40%,#ddffc30f 49%,transparent 58%);
+    animation:studio-light 6s ease-in-out infinite;
+  }
+  @keyframes studio-light {
+    0%,100% { transform:translateX(-62%); opacity:0; }
+    20% { opacity:1; } 75%,99% { transform:translateX(64%); opacity:0; }
+  }
+  .site-nav { animation:nav-arrival .65s cubic-bezier(.16,1,.3,1) both; }
+  @keyframes nav-arrival { from { opacity:.2; translate:0 -1.1rem; } to { opacity:1; translate:0 0; } }
+  .site-nav::after {
+    content:""; position:absolute; bottom:-1px; left:12%; width:26%; height:2px;
+    border-radius:2px; pointer-events:none;
+    background:linear-gradient(90deg,transparent,#bbff00,transparent);
+    animation:nav-signal 3.4s ease-in-out infinite alternate;
+  }
+  @keyframes nav-signal { from { transform:translateX(0); } to { transform:translateX(190%); } }
+  @supports(animation-timeline:scroll()) {
+    .garage::before { animation:garage-camera 9s ease-in-out infinite alternate, garage-depth linear both; animation-timeline:auto,scroll(root); animation-range:normal,0 75vh; }
+    @keyframes garage-depth { from { translate:0 0; } to { translate:0 8%; } }
+  }
+}
+@media(prefers-reduced-motion:reduce){.site-nav summary span{transition:none}}
