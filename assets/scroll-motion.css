@@ -1,0 +1,51 @@
+/* Ambient light stays behind content and never participates in hit testing. */
+.light-stage { position:relative; isolation:isolate; }
+.light-field {
+  position:absolute; inset:0; z-index:-1; pointer-events:none; overflow:hidden;
+  border-radius:inherit; contain:paint;
+}
+.light-field::before,.light-field::after { content:""; position:absolute; inset:-4% 0; }
+.light-field::before {
+  background:radial-gradient(ellipse 55% 32% at 80% 38%,#a6ff001e,transparent 84%),
+             radial-gradient(ellipse 46% 30% at 19% 62%,#62beac12,transparent 80%);
+}
+.light-field::after {
+  background-image:radial-gradient(circle,#d8ffc643 .8px,transparent 1.15px);
+  background-size:19px 19px; mask-image:linear-gradient(118deg,transparent 36%,#0009 69%,transparent 94%);
+}
+.field-1::before { background:repeating-linear-gradient(117deg,transparent 0 54px,#baff0011 55px,transparent 57px 92px),radial-gradient(ellipse at 16% 30%,#baff001a,transparent 53%); }
+.field-1::after { mask-image:linear-gradient(72deg,#0007,transparent 40%); }
+.field-2::before { background:repeating-radial-gradient(ellipse at 105% 100%,transparent 0 44px,#bbff001a 45px,transparent 47px 70px); }
+.field-2::after { background:radial-gradient(ellipse at 90% 84%,#bbff001b,transparent 52%);mask-image:none; }
+@media(prefers-reduced-motion:no-preference) {
+  .text-arrival { animation:editorial-resolve .55s cubic-bezier(.2,.65,.2,1) backwards; }
+  h1.text-arrival,h2.text-arrival { animation-name:headline-reveal; animation-duration:.72s; }
+  @keyframes editorial-resolve { from { opacity:.55; translate:0 .38rem; } }
+  @keyframes headline-reveal { from { clip-path:inset(0 0 80% 0); opacity:.6; } to { clip-path:inset(-12% -2%); } }
+  :is(.choices button,.site-nav nav a,.fomo-cta,.button,.private-button):active { scale:.98; }
+  @supports (animation-timeline:scroll()) {
+    body::after { content:""; position:fixed; z-index:115; inset:0 0 auto; height:2px; background:#bbff00; pointer-events:none; transform-origin:left; animation:reading-line linear both; animation-timeline:scroll(root); }
+    @keyframes reading-line { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+    .light-stage { view-timeline-name:--surface; }
+    .light-field::before { animation:light-travel linear both; animation-timeline:--surface; }
+    @keyframes light-travel { from { transform:translateY(-3%) scale(1.04); } to { transform:translateY(3%) scale(1.04); } }
+    .service-view .tile { animation:art-expand linear both; animation-timeline:view(); animation-range:entry 0% cover 40%; }
+    @keyframes art-expand { from { clip-path:inset(8% 5% round 1.3rem); } to { clip-path:inset(0 round .65rem); } }
+  }
+}
+@media(max-width:600px) {
+  .light-field::after { background-size:24px 24px; opacity:.65; }
+  .text-arrival { animation-duration:.35s; }
+}
+@media(prefers-reduced-motion:no-preference) {
+  .site-brand { background-image:linear-gradient(110deg,#efefe9 33%,#bbff00 47%,#fff 52%,#efefe9 67%); background-size:285% 100%; background-clip:text; }
+  .site-nav .site-brand:is(:hover,:focus-visible) { color:transparent; animation:brand-sheen .85s ease-out both; }
+  @keyframes brand-sheen { from { background-position:100% 0; } to { background-position:0 0; } }
+  :is(.offers a,.private-card,.fomo-grid article,.ps-details section):focus-within {
+    outline:1px solid #bbff0066; outline-offset:2px;
+  }
+  :is(.questions,.leasing-panel) details[open]>:not(summary) { animation:answer-unfold .28s ease-out; }
+  @keyframes answer-unfold { from { opacity:.4; translate:0 -.35rem; } }
+  :is(.private-form,.leasing-form) :is(input,textarea,select) { transition:border-color .2s,box-shadow .2s; }
+  :is(.private-form,.leasing-form) :is(input,textarea,select):focus-visible { border-color:#bbff00; box-shadow:0 0 0 3px #bbff0022; }
+}
