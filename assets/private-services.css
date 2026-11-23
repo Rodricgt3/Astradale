@@ -62,4 +62,4 @@ body.private-services-page { margin: 0; background: var(--ps-ink); color: var(--
   .ps-footer { align-items: flex-start; flex-wrap: wrap; padding: 24px 0; }
   .ps-footer > span { order: 3; width: 100%; color: var(--ps-muted); font-size: 11px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@scope (:root[data-motion="soft"]) { html { scroll-behavior: auto; } }

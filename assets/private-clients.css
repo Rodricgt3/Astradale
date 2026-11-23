@@ -97,7 +97,7 @@
   #private-clients .private-options legend { grid-column: auto; }
   #private-clients .private-submit-row .private-button { width: 100%; }
 }
-@media (prefers-reduced-motion: reduce) {
+@scope (:root[data-motion="soft"]) {
   #private-clients *, #private-clients *::before, #private-clients *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
 

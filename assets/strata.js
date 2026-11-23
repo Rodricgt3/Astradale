@@ -1,5 +1,5 @@
 (() => {
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = window.fomoMotion;
   const scene = document.querySelector('.orbit');
   const cards = [...scene.querySelectorAll('.sat')];
   const toggle = scene.querySelector('button');

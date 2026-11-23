@@ -1,7 +1,7 @@
 (() => {
   const hero = document.querySelector('.garage');
   const replay = hero.querySelector('.replay-intro');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = window.fomoMotion;
   const words = hero.querySelectorAll('h1 span');
   const panels = hero.querySelectorAll('.garage-panels i');
   let active = [];
@@ -41,7 +41,7 @@
   photo.decode().then(() => {
     hero.classList.add('intro-ready');
     replay.hidden = false;
-    replay.onclick = () => play(true);
+    replay.onclick = () => { if (reduced.matches) reduced.set('full'); play(true); };
     if (hero.getBoundingClientRect().bottom > 0) play();
   }).catch(() => {});
   reduced.addEventListener('change',stop);

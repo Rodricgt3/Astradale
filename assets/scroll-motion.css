@@ -17,7 +17,7 @@
 .field-1::after { mask-image:linear-gradient(72deg,#0007,transparent 40%); }
 .field-2::before { background:repeating-radial-gradient(ellipse at 105% 100%,transparent 0 44px,#bbff001a 45px,transparent 47px 70px); }
 .field-2::after { background:radial-gradient(ellipse at 90% 84%,#bbff001b,transparent 52%);mask-image:none; }
-@media(prefers-reduced-motion:no-preference) {
+@scope (:root[data-motion="full"]) {
   .text-arrival { animation:editorial-resolve .55s cubic-bezier(.2,.65,.2,1) backwards; }
   h1.text-arrival,h2.text-arrival { animation-name:headline-reveal; animation-duration:.72s; }
   @keyframes editorial-resolve { from { opacity:.55; translate:0 .38rem; } }
@@ -37,7 +37,7 @@
   .light-field::after { background-size:24px 24px; opacity:.65; }
   .text-arrival { animation-duration:.35s; }
 }
-@media(prefers-reduced-motion:no-preference) {
+@scope (:root[data-motion="full"]) {
   .site-brand { background-image:linear-gradient(110deg,#efefe9 33%,#bbff00 47%,#fff 52%,#efefe9 67%); background-size:285% 100%; background-clip:text; }
   .site-nav .site-brand:is(:hover,:focus-visible) { color:transparent; animation:brand-sheen .85s ease-out both; }
   @keyframes brand-sheen { from { background-position:100% 0; } to { background-position:0 0; } }
@@ -58,7 +58,7 @@
 }
 .site-nav summary span { transition:rotate .3s ease; }
 .site-nav details[open] summary span { rotate:90deg; }
-@media (prefers-reduced-motion:no-preference) {
+@scope (:root[data-motion="full"]) {
   .garage::before { animation:garage-camera 9s ease-in-out infinite alternate; transform-origin:50% 75%; }
   @keyframes garage-camera {
     from { transform:scale(1) translateX(0); }
@@ -87,4 +87,4 @@
     @keyframes garage-depth { from { translate:0 0; } to { translate:0 8%; } }
   }
 }
-@media(prefers-reduced-motion:reduce){.site-nav summary span{transition:none}}
+@scope (:root[data-motion="soft"]) {.site-nav summary span{transition:none}}

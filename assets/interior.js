@@ -3,7 +3,7 @@
   const toggle = menu.querySelector('summary');
   addEventListener('pageshow', () => { menu.open = false; });
   menu.addEventListener('toggle', () => {
-    if (menu.open && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (menu.open && !window.fomoMotion.matches) {
       menu.querySelector('nav').animate(
         [{ opacity: 0, translate: '0 -6px' }, { opacity: 1, translate: '0 0' }],
         { duration: 160, easing: 'ease-out' }
@@ -24,7 +24,7 @@
 
 // Native adaptations of React Bits Blur Text, Tilted Card and Click Spark.
 (() => {
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = window.fomoMotion;
   const mouse = matchMedia('(hover: hover) and (pointer: fine)');
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {

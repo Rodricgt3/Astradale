@@ -2,7 +2,7 @@
   const panel = document.querySelector('.workbench');
   const tags = [...panel.querySelectorAll('#crew i')];
   const button = document.querySelector('#motion');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = window.fomoMotion;
   const points = [[.75,.36],[.61,.58],[.82,.79]];
   let pointer, timer, paused = false, visible = true, gathered = false;
   function draw() {

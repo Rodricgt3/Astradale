@@ -1,6 +1,6 @@
 (() => {
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (reduced.matches || !window.IntersectionObserver || !Element.prototype.animate) return;
+  const reduced = window.fomoMotion;
+  if (!window.IntersectionObserver || !Element.prototype.animate) return;
 
   // Entrance parameters from the published AgencyIO hero.
   const frames = (progress, offset = 0) => ({
