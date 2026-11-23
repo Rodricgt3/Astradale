@@ -1,5 +1,4 @@
 (() => {
-  const reduced = window.fomoMotion;
   if (!window.IntersectionObserver || !Element.prototype.animate) return;
 
   // Entrance parameters from the published AgencyIO hero.
@@ -34,7 +33,6 @@
     for (const { target, isIntersecting } of entries) {
       if (!isIntersecting) continue;
       observer.unobserve(target);
-      if (reduced.matches) continue;
       const words = wordHeadings.get(target);
       if (words) {
         words.forEach((word, index) => {

@@ -1,13 +1,11 @@
 (() => {
   const panel = document.querySelector('.workbench');
   const tags = [...panel.querySelectorAll('#crew i')];
-  const button = document.querySelector('#motion');
-  const reduced = window.fomoMotion;
   const points = [[.75,.36],[.61,.58],[.82,.79]];
-  let pointer, timer, paused = false, visible = true, gathered = false;
+  let pointer, timer, visible = true, gathered = false;
   function draw() {
     const {width,height} = panel.getBoundingClientRect();
-    const phase = Math.min(2, Math.floor(scrollY / 90));
+    const phase = Math.max(0, Math.min(2, Math.floor((innerHeight - panel.getBoundingClientRect().top) / (innerHeight / 3))));
     tags.forEach((tag,i) => {
       const [x,y] = points[(i + phase) % points.length];
       const near = gathered && pointer;
@@ -18,33 +16,27 @@
   }
   function reset() { clearTimeout(timer); gathered = false; pointer = null; draw(); }
   function mode() {
-    const active = !paused && !reduced.matches;
-    button.hidden = reduced.matches;
-    button.textContent = paused ? 'Reproducir' : 'Pausar';
     tags.forEach((tag,i) => {
-      tag.style.display = active ? 'block' : 'none';
+      tag.style.display = 'block';
       tag.style.transition = 'transform ' + (460+i*110) + 'ms cubic-bezier(.2,.8,.2,1)';
     });
     reset();
   }
-  button.onclick = () => { paused = !paused; mode(); };
   panel.addEventListener('pointermove', event => {
-    if (event.pointerType === 'touch' || paused || reduced.matches) return;
+    if (event.pointerType === 'touch') return;
     const box = panel.getBoundingClientRect();
     pointer = {x:event.clientX-box.left,y:event.clientY-box.top};
     clearTimeout(timer);
     timer = setTimeout(() => { gathered = true; draw(); },220);
   });
   panel.addEventListener('pointerleave',reset);
-  document.addEventListener('keydown',event => { if(event.key === 'Escape'){paused=true;mode();} });
   new IntersectionObserver(([entry]) => {visible=entry.isIntersecting;}).observe(panel);
   let frame = 0;
   function schedule() {
-    if (!frame && visible && !paused && !reduced.matches)
+    if (!frame && visible)
       frame = requestAnimationFrame(() => {frame=0;draw();});
   }
   addEventListener('scroll',schedule,{passive:true});
   addEventListener('resize',schedule);
-  reduced.addEventListener('change',mode);
   mode();
 })();

@@ -1,7 +1,5 @@
 (() => {
   const hero = document.querySelector('.garage');
-  const replay = hero.querySelector('.replay-intro');
-  const reduced = window.fomoMotion;
   const words = hero.querySelectorAll('h1 span');
   const panels = hero.querySelectorAll('.garage-panels i');
   let active = [];
@@ -12,14 +10,12 @@
     active = [];
     hero.classList.remove('intro-running');
   }
-  function play(userRequested = false) {
+  function play() {
     stop();
     const run = generation;
     hero.classList.add('intro-running');
     const animate = (node, frames, delay, duration) => {
-      const gentle = reduced.matches && !userRequested;
-      const steps = gentle ? [{opacity:.55},{opacity:1}] : frames;
-      active.push(node.animate(steps,{duration:gentle ? 450 : duration,delay:gentle ? 0 : delay,fill:'backwards',easing:'cubic-bezier(.19,.72,.2,1)'}));
+      active.push(node.animate(frames,{duration,delay,fill:'backwards',easing:'cubic-bezier(.19,.72,.2,1)'}));
     };
     const starts = ['translate(-11%, 2%)','translateY(13%)','translate(11%, 2%)'];
     panels.forEach((panel,i) => animate(panel, [
@@ -40,11 +36,8 @@
   photo.src = new URL('assets/motor.webp',document.baseURI).href;
   photo.decode().then(() => {
     hero.classList.add('intro-ready');
-    replay.hidden = false;
-    replay.onclick = () => { if (reduced.matches) reduced.set('full'); play(true); };
     if (hero.getBoundingClientRect().bottom > 0) play();
   }).catch(() => {});
-  reduced.addEventListener('change',stop);
   addEventListener('pagehide',stop);
 })();
 

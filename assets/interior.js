@@ -3,7 +3,7 @@
   const toggle = menu.querySelector('summary');
   addEventListener('pageshow', () => { menu.open = false; });
   menu.addEventListener('toggle', () => {
-    if (menu.open && !window.fomoMotion.matches) {
+    if (menu.open) {
       menu.querySelector('nav').animate(
         [{ opacity: 0, translate: '0 -6px' }, { opacity: 1, translate: '0 0' }],
         { duration: 160, easing: 'ease-out' }
@@ -24,14 +24,13 @@
 
 // Native adaptations of React Bits Blur Text, Tilted Card and Click Spark.
 (() => {
-  const reduced = window.fomoMotion;
   const mouse = matchMedia('(hover: hover) and (pointer: fine)');
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
       const text = entry.target;
       observer.unobserve(text);
-      if (reduced.matches || text.children.length) continue;
+      if (text.children.length) continue;
       const words = text.textContent.trim().split(/\s+/);
       const fragment = document.createDocumentFragment();
       words.forEach((word, index) => {
@@ -50,7 +49,7 @@
   for (const card of cards) {
     let frame = 0, x = 0, y = 0;
     card.addEventListener('pointermove', event => {
-      if (event.pointerType !== 'mouse' || reduced.matches || !mouse.matches) return;
+      if (event.pointerType !== 'mouse' || !mouse.matches) return;
       x = event.clientX;
       y = event.clientY;
       if (frame) return;
@@ -70,7 +69,7 @@
   }
 
   document.addEventListener('click', event => {
-    if (reduced.matches || !event.detail || !event.target.closest('summary,button')) return;
+    if (!event.detail || !event.target.closest('summary,button')) return;
     const burst = document.createElement('span');
     burst.className = 'motion-spark';
     burst.setAttribute('aria-hidden','true');
