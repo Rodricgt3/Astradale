@@ -1,0 +1,11 @@
+.garage-panels { position:absolute; inset:0; z-index:-1; pointer-events:none; background-size:inherit; background-position:inherit; visibility:hidden; }
+.garage-panels i { position:absolute; inset:0; background: url(motor.webp) no-repeat; background-size:inherit; background-position:inherit; }
+.garage-panels i:first-child { clip-path:inset(0 66.65% 0 0); }
+.garage-panels i:nth-child(2) { clip-path:inset(0 33.32% 0 33.32%); }
+.garage-panels i:last-child { clip-path:inset(0 0 0 66.65%); }
+.garage h1 span { display:inline-block; }
+.garage.intro-running::before,.garage.intro-running::after { visibility:hidden; }
+.garage.intro-running .garage-panels { visibility:visible; }
+.garage.intro-ready::before { animation:none; }
+.garage .replay-intro { position:absolute; right:3%; bottom:4%; color:#eeefeb; background:#090b09b8; border:1px solid #777a73; border-radius:2rem; padding:.55rem .85rem; min-height:44px; cursor:pointer; font:600 .75rem/1.2 system-ui,sans-serif; }
+@media(max-width:600px){.garage .replay-intro { top:4.2rem; bottom:auto; right:.65rem; font-size:.65rem; min-height:44px; padding:.35rem .55rem; }}
